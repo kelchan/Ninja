@@ -18,10 +18,32 @@ class Ninja {
     drinkSake() {
         this.health += 10;
     }
+
 }
+
+
 
 const ninja1 = new Ninja( "Hyabusa", 100 );
 ninja1.sayName();
 ninja1.drinkSake();
 ninja1.showStats();
+
+
+
+
+class Sensei extends Ninja {
+    constructor( name, health, speed, strength, wisdom ) {
+        super( name, 200, 10, 10 );
+        this.wisdom = 10;
+    }
+
+    speakWisdom() {
+        super.drinkSake();
+        console.log( 'What one programmer can do in one month, two programmers can do in in two months.' );
+    }
+}
+
+const superSensei = new Sensei( "Master Splinter" );
+superSensei.speakWisdom();
+superSensei.showStats();
 
